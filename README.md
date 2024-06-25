@@ -1,29 +1,69 @@
-# Create T3 App
+# Test Project
 
-This is a [T3 Stack](https://create.t3.gg/) project bootstrapped with `create-t3-app`.
+This project is for web builder with drag&drop.
 
-## What's next? How do I make an app with this?
+## Technologies Used
 
-We try to keep this project as simple as possible, so you can start with just the scaffolding we set up for you, and add additional things later when they become necessary.
+- **Frontend**: Next.js, Tailwind CSS, `shadcn/ui` for UI components
+- **Backend**: tRPC for the backend architecture
+- **Database**: Prisma as the ORM with Supabase as the database service
+- **Starter Kit**: create t3 app
 
-If you are not familiar with the different technologies used in this project, please refer to the respective docs. If you still are in the wind, please join our [Discord](https://t3.gg/discord) and ask for help.
+## Getting Started
 
-- [Next.js](https://nextjs.org)
-- [NextAuth.js](https://next-auth.js.org)
-- [Prisma](https://prisma.io)
-- [Drizzle](https://orm.drizzle.team)
-- [Tailwind CSS](https://tailwindcss.com)
-- [tRPC](https://trpc.io)
+These instructions will get you a copy of the project up and running on your local machine for development and testing purposes.
 
-## Learn More
+### Prerequisites
 
-To learn more about the [T3 Stack](https://create.t3.gg/), take a look at the following resources:
+- Node.js (20.14.0)
+- yarn
+- A Supabase account and a database setup
 
-- [Documentation](https://create.t3.gg/)
-- [Learn the T3 Stack](https://create.t3.gg/en/faq#what-learning-resources-are-currently-available) — Check out these awesome tutorials
+### Installation
 
-You can check out the [create-t3-app GitHub repository](https://github.com/t3-oss/create-t3-app) — your feedback and contributions are welcome!
+1. **Clone the repository**
 
-## How do I deploy this?
+```bash
+git clone https://github.com/crackdev01/drag-drop-builder.git
+cd drag-drop-builder
+```
 
-Follow our deployment guides for [Vercel](https://create.t3.gg/en/deployment/vercel), [Netlify](https://create.t3.gg/en/deployment/netlify) and [Docker](https://create.t3.gg/en/deployment/docker) for more information.
+2. **Install dependencies**
+
+```bash
+npm install
+# or
+yarn install
+```
+
+3. **Set up environment variables**
+
+Create a `.env` file in the root of your project and add the following variables:
+
+```env
+DATABASE_URL="postgres://postgres.btaxpidaehwxhvlgrqwj:BSiN5yazQu8JjfKv@aws-0-eu-west-1.pooler.supabase.com:6543/postgres?sslmode=require&pgbouncer=true"
+DIRECT_URL="postgres://postgres.btaxpidaehwxhvlgrqwj:BSiN5yazQu8JjfKv@aws-0-eu-west-1.pooler.supabase.com:5432/postgres?sslmode=require&pgbouncer=true"
+```
+
+4. **Run the Prisma migration (optional)**
+
+If you've defined new models or changed existing ones, you might need to run a migration:
+
+```bash
+yarn db:generate
+```
+```bash
+yarn db:migrate
+```
+```bash
+yarn db:push
+```
+
+5. **Start the development server**
+
+```bash
+yarn dev
+```
+
+Navigate to `http://localhost:3000` to view the app.
+
